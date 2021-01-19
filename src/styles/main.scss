@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: $body-color;
+  font-family: sans-serif;
+  overflow-x: hidden;
+}
+
+#logo {
+  color: red;
+  font-family: sans-serif;
+}
+
+.demo {
+  height: 100vh;
+  background-color: rgba($color: green, $alpha: 0.5);
+}
+
+.container-vh {
+  width: 100vw;
+  height: 100vh;
+  background-color: yellow;
+}
+
+.vh-3 {
+  height: 300vh;
+}
+
+.container-vh:nth-child(even) {
+  background-color: green;
+}
+
+.video-animation {
+  display: block;
+}
+
+#v0 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.intro {
+  height: 100vh;
+}
+
+.intro video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.intro h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 80px;
+  color: white;
+}
