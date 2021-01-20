@@ -1,0 +1,19 @@
+//circle mask image
+.mask-circle {
+  clip-path: circle();
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+
+  /* OLD VALUE example: circle(245px, 140px, 50px); */
+
+  /* Yep, even the new clip-path has deprecated stuff. */
+}
+
+.border-radius-xs {
+  border-radius: $border-radius-xs;
+}
+
+.twoCol {
+  display: flex;
+}

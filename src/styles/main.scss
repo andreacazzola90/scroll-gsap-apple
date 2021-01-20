@@ -1,67 +1,254 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  color: $body-color;
+  color: $color-second;
+  background-color: $color-first;
+  font-size: 16px;
   font-family: sans-serif;
   overflow-x: hidden;
 }
 
-#logo {
-  color: red;
-  font-family: sans-serif;
+.wrapper {
+  max-width: $wide-screen;
 }
 
-.demo {
-  height: 100vh;
-  background-color: rgba($color: green, $alpha: 0.5);
+.box {
+  padding: $space-sm;
+  width: 100%;
+  min-height: fit-content;
+  border: 1px solid red;
+  &-full {
+    padding: 0;
+  }
 }
 
-.container-vh {
-  width: 100vw;
-  height: 100vh;
-  background-color: yellow;
+.c-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .textBox {
+    text-align: center;
+    .title {
+      @extend title-xs;
+      span {
+        font-weight: 100;
+        color: $color-third;
+      }
+    }
+    .desc {
+      @extend text-md;
+    }
+  }
+  &.text-full {
+    height: 60vh;
+  }
 }
 
-.vh-3 {
-  height: 300vh;
-}
-
-.container-vh:nth-child(even) {
-  background-color: green;
-}
-
-.video-animation {
+.c-slideShow {
   display: block;
+
+  img {
+    width: 10%;
+    padding: $space-xs;
+
+    &.active {
+      min-width: 80%;
+      height: auto;
+      margin: 0;
+      float: left;
+    }
+  }
 }
 
-#v0 {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  object-fit: cover;
+.c-slide-horizontal {
+  display: flex;
+
+  .textBox {
+    width: 25%;
+    max-width: 25%;
+    padding: $space-xs;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    @extend t-uppercase;
+
+    .title {
+      min-width: fit-content;
+      max-width: 60%;
+      @extend title-sm;
+    }
+    .desc {
+      min-width: fit-content;
+      max-width: 60%;
+    }
+  }
+
+  .media {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: $space-xs;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  &.text-reverse {
+    flex-direction: row-reverse;
+
+    .textBox {
+      align-items: flex-start;
+      text-align: left;
+    }
+  }
 }
 
-.intro {
-  height: 100vh;
+.c-slide-vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .textBox {
+    width: auto;
+    max-width: 100%;
+    padding: $space-xs;
+    text-align: center;
+    .title {
+      @extend title-md;
+      span {
+        font-weight: 100;
+        color: $color-third;
+      }
+    }
+    .desc {
+      @extend text-md;
+    }
+  }
+
+  .media {
+    width: auto;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: $space-xs;
+
+    img {
+      margin: $space-xs;
+      max-width: 30%;
+
+      &:only-child {
+        max-width: 100%;
+        margin: 0;
+      }
+    }
+  }
 }
 
-.intro video {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
+.c-video {
+  position: relative;
+
+  .textBox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: fit-content;
+    .title {
+      @extend title-md;
+      span {
+        font-weight: 100;
+        color: $color-third;
+      }
+    }
+  }
+
+  video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &.text-top {
+    .textBox {
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translate(-50%, -10%);
+    }
+  }
 }
 
-.intro h1 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 80px;
-  color: white;
+.c-productAnchor {
+  display: flex;
+  flex-direction: row-reverse;
+
+  .textBox {
+    width: 60%;
+    padding: $space-xs;
+    a {
+      text-decoration: none;
+      color: $color-second;
+      &:hover {
+        color: $color-third;
+      }
+    }
+    .title {
+      @extend title-md;
+    }
+  }
+
+  .media {
+    width: 40%;
+    padding: $space-xs;
+    padding-top: 5%;
+  }
+}
+
+.c-productView {
+  display: flex;
+  flex-direction: row-reverse;
+
+  .textBox {
+    width: 60%;
+    padding: $space-xs;
+
+    .title {
+      @extend title-md;
+      height: 10%;
+    }
+
+    .list {
+      padding: $space-sm;
+    }
+  }
+
+  .media {
+    width: 40%;
+    padding: $space-xs;
+    padding-top: 5%;
+  }
+}
+
+.c-bannerTwoCol {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  align-items: flex-end;
+  padding: $space-sm;
+  max-width: 50%;
+
+  .textBox {
+    min-width: fit-content;
+    max-width: 80%;
+    padding: $space-sm;
+    .title {
+      @extend title-sm;
+    }
+  }
+
+  &:nth-child(even) {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    text-align: left;
+  }
 }
